@@ -16,6 +16,28 @@ class CartView extends GetView<CartController> {
             title: "My Cart",
           ),
         ),
+        floatingActionButton: Container(
+          width: 120,
+          height: 50,
+          child: FloatingActionButton(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
+            ),
+            onPressed: () {},
+            foregroundColor: Colors.white,
+            backgroundColor: Color.fromARGB(255, 245, 131, 0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Icon(Icons.shopping_cart, size: 20),
+                Text(
+                  "Checkout",
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ),
+        ),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -28,7 +50,7 @@ class CartView extends GetView<CartController> {
               ),
               ListView.builder(
                   shrinkWrap: true,
-                  itemCount: 6,
+                  itemCount: 3,
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: const EdgeInsets.all(4.0),
@@ -104,15 +126,29 @@ class CartView extends GetView<CartController> {
                                                     left: 10),
                                                 child: Row(
                                                   children: [
-                                                    OutlinedButton(
-                                                      onPressed: () {
-                                                        debugPrint(
-                                                            'Received click');
-                                                      },
-                                                      child: const Icon(
-                                                        Icons.add,
-                                                        size: 18,
-                                                        color: Colors.black,
+                                                    Container(
+                                                      height: 20,
+                                                      width: 40,
+                                                      child: OutlinedButton(
+                                                        style: OutlinedButton
+                                                            .styleFrom(
+                                                                side: BorderSide(
+                                                                    color: Colors
+                                                                        .grey
+                                                                        .shade300),
+                                                                padding:
+                                                                    EdgeInsets
+                                                                        .all(
+                                                                            2.0)),
+                                                        onPressed: () {
+                                                          debugPrint(
+                                                              'Received click');
+                                                        },
+                                                        child: Icon(
+                                                          Icons.add,
+                                                          size: 15,
+                                                          color: Colors.black,
+                                                        ),
                                                       ),
                                                     ),
                                                     Padding(
@@ -127,16 +163,31 @@ class CartView extends GetView<CartController> {
                                                                     .bold),
                                                       ),
                                                     ),
-                                                    OutlinedButton(
+                                                    Container(
+                                                      height: 20,
+                                                      width: 40,
+                                                      child: OutlinedButton(
+                                                        style: OutlinedButton
+                                                            .styleFrom(
+                                                                side: BorderSide(
+                                                                    color: Colors
+                                                                        .grey
+                                                                        .shade300),
+                                                                padding:
+                                                                    EdgeInsets
+                                                                        .all(
+                                                                            2.0)),
                                                         onPressed: () {
                                                           debugPrint(
                                                               'Received click');
                                                         },
-                                                        child: const Icon(
+                                                        child: Icon(
                                                           Icons.remove,
+                                                          size: 15,
                                                           color: Colors.black,
-                                                          size: 18,
-                                                        ))
+                                                        ),
+                                                      ),
+                                                    ),
                                                   ],
                                                 ),
                                               )
@@ -145,6 +196,17 @@ class CartView extends GetView<CartController> {
                                         ],
                                       ))
                                 ],
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 20),
+                                child: Text(
+                                  "120\$",
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color.fromARGB(255, 245, 131, 0),
+                                  ),
+                                ),
                               ),
                             ]),
                       ),

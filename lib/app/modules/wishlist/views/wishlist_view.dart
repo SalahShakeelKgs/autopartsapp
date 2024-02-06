@@ -81,21 +81,10 @@ class WishlistView extends GetView<WishlistController> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            RawMaterialButton(
-                              onPressed: () {},
-                              elevation: 2.0,
-                              fillColor: Color.fromARGB(255, 245, 131, 0),
-                              child: Icon(
-                                Icons.close,
-                                size: 15.0,
-                                color: Colors.white,
-                              ),
-                              shape: CircleBorder(),
-                              constraints: BoxConstraints(
-                                minWidth: 20,
-                                minHeight: 20,
-                              ),
-                            ),
+                            IconButton(
+                                color: Color.fromARGB(255, 245, 131, 0),
+                                onPressed: () {},
+                                icon: Icon(Icons.cancel)),
                             Text(
                               "120\$",
                               style: TextStyle(
