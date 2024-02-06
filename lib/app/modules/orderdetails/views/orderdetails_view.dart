@@ -168,70 +168,89 @@ class OrderdetailsView extends GetView<OrderdetailsController> {
               ),
             ),
             Stepper(
+                controlsBuilder: (context, details) {
+                  return SizedBox();
+                },
+                stepIconBuilder: (stepIndex, stepState) => Icon(
+                      Icons.check,
+                      size: 15,
+                      color: Colors.white,
+                    ),
                 connectorColor: MaterialStateColor.resolveWith(
                     (states) => Color.fromARGB(255, 245, 131, 0)),
                 steps: <Step>[
                   Step(
-                    title: Text("Order Received"),
-                    content: Container(
-                      alignment: Alignment.centerLeft,
-                      child: Row(
-                        children: [
-                          Icon(Icons.alarm, color: Colors.grey),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: Text('Content for Step 1'),
-                          ),
-                        ],
+                    title: Text(
+                      "Order Received",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    content: ListTile(
+                      leading: Icon(Icons.alarm, color: Colors.grey),
+                      title: Text('Content for Step 1'),
+                      shape: Border(
+                        bottom: BorderSide(
+                          color: Colors.grey.shade300,
+                        ),
                       ),
                     ),
                   ),
                   Step(
-                    title: Text("Order Prepared"),
-                    content: Container(
-                      alignment: Alignment.centerLeft,
-                      child: Row(
-                        children: [
-                          Icon(Icons.alarm, color: Colors.grey),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: Text('Content for Step 1'),
-                          ),
-                        ],
+                    title: Text(
+                      "Order Prepared",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    content: ListTile(
+                      leading: Icon(Icons.alarm, color: Colors.grey),
+                      title: Text('Content for Step 1'),
+                      shape: Border(
+                        bottom: BorderSide(
+                          color: Colors.grey.shade300,
+                        ),
                       ),
                     ),
                   ),
                   Step(
-                    title: Text("On The Way"),
-                    content: Container(
-                      alignment: Alignment.centerLeft,
-                      child: Row(
-                        children: [
-                          Icon(Icons.alarm, color: Colors.grey),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: Text('Content for Step 1'),
-                          ),
-                        ],
+                    title: Text(
+                      "On The Way",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    content: ListTile(
+                      leading: Icon(Icons.alarm, color: Colors.grey),
+                      title: Text('Content for Step 1'),
+                      shape: Border(
+                        bottom: BorderSide(
+                          color: Colors.grey.shade300,
+                        ),
                       ),
                     ),
                   ),
                   Step(
-                    title: Text("Delivered"),
-                    content: Container(
-                      alignment: Alignment.centerLeft,
-                      child: Row(
-                        children: [
-                          Icon(Icons.alarm, color: Colors.grey),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: Text('Content for Step 1'),
-                          ),
-                        ],
+                    title: Text(
+                      "Delivered",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    content: ListTile(
+                      leading: Icon(Icons.alarm, color: Colors.grey),
+                      title: Text('Content for Step 1'),
+                      shape: Border(
+                        bottom: BorderSide(
+                          color: Colors.grey.shade300,
+                        ),
                       ),
                     ),
                   ),
-                ])
+                ]),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+              child: Text(
+                  "!!Congratulations!!\n Your order has been successfully delivered.",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 245, 131, 0),
+                  )),
+            )
           ],
         ),
       ),
